@@ -15,6 +15,9 @@ using Microsoft.Extensions.Hosting;
 using MoviesApp.Data;
 using MoviesApp.Middlewares;
 using MoviesApp.Services;
+using System.Net.Mime;
+using MoviesApp.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace MoviesApp
 {
@@ -40,6 +43,14 @@ namespace MoviesApp
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IMovieService, MovieService>();
             services.AddScoped<IActorService, ActorService>();
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                options.Password.RequireNonAlphanumeric = false;
+            })
+               .AddEntityFrameworkStores<MoviesContext>()
+               .AddTokenProvider<DataProtectorTokenProvider<ApplicationUser>>(TokenOptions.DefaultProvider);
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

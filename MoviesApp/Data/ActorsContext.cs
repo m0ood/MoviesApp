@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MoviesApp.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace MoviesApp.Data
 {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MoviesApp.Migrations
+namespace MoviesApp.Migrations.Movies
 {
-    public partial class Actor : Migration
+    public partial class Movie : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -17,7 +17,7 @@ namespace MoviesApp.Migrations
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.0");
+                .HasAnnotation("ProductVersion", "5.0.1");
 
             modelBuilder.Entity("MoviesApp.Models.Actor", b =>
                 {
@@ -34,6 +34,9 @@ namespace MoviesApp.Migrations
 
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MovieId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
